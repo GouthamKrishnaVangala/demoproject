@@ -1,0 +1,13 @@
+{
+    "name": "k6",
+    "version": "1.0.0",
+    "scripts": {
+        "load": "docker run -i -v //c/Users/vangala/Desktop/Performance/k6:/k6 loadimpact/k6 run /k6/build/test.js"
+    },
+    "devDependencies": {},
+    "dependencies": {
+        "@types/k6": "^0.25.1",
+        "@types/node": "^13.1.8",
+        "prettier": "^1.19.1"
+    }
+}
