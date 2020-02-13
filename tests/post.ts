@@ -17,3 +17,5 @@ export default function() {
   var res = http.get("http://httpbin.org");
   console.log("Response time was " + String(res.timings.duration) + " ms");
 };
+
+//docker run -i -v %WORKSPACE%/k6:/k6 loadimpact/k6 run /k6/build/test.js

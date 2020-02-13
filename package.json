@@ -2,7 +2,7 @@
     "name": "k6",
     "version": "1.0.0",
     "scripts": {
-        "load": "docker run -i -v //c/Users/vangala/Desktop/Performance/k6:/k6 loadimpact/k6 run /k6/build/test.js"
+        "load": "docker run -i -v //c/Users/vangala/Desktop/IJenkins/k6:/k6 -v //c/Users/vangala/Desktop/IJenkins/k6:/tmp/artifacts loadimpact/k6 run --out csv=/k6/testreport.csv /k6/build/test.js"
     },
     "devDependencies": {},
     "dependencies": {

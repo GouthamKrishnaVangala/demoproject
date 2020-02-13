@@ -4,14 +4,14 @@ var http = require("k6/http");
 var { check } = require("k6");
 var { Trend, Rate } = require("k6/metrics");
 
-const url = "https://google.com";
+const url = "https://store.mosaiq.one/";
 
 export let errorRate = new Rate("errors");
 
 export let options = {
     stages:[
-        {duration: "5s", target: 1},
-        {duration: "5s", target: 10},
+        {duration: "10s", target: 100},
+        {duration: "20s", target: 150},
     ],
     thresholds: {
         "errors": ["rate<0.1"],
@@ -37,18 +37,18 @@ export default function(){
         myTrend.add(resp.timings.waiting);
         check(resp,{
             "status": (res: { status: number; }) => res.status == 200,
-            "body length":(res: { body: string | any[]; }) => res.body.length <= 78000,
+            "body length":(res: { body: string | any[]; }) => res.body.length <= 13000,
         })
         errorRate.add(!resp);
     })
     
 group("2nd grouping", function(){
-    const resp: any = http.get(url+"/gmail");
+    const resp: any = http.get(url+"/legal/privacy");
     //console.log("body length: "+(resp.body.length) );
     myTrend.add(resp.timings.waiting);
     check(resp,{
         "status": (res: { status: number; }) => res.status == 200,
-        "body length":(res: { body: string | any[]; }) => res.body.length <= 13000,
+        "body length":(res: { body: string | any[]; }) => res.body.length <= 78000,
     })
     errorRate.add(!resp);
 })
