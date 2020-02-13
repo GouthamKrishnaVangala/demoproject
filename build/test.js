@@ -8,8 +8,8 @@ const url = "https://store.mosaiq.one/";
 exports.errorRate = new Rate("errors");
 exports.options = {
     stages: [
-        { duration: "10s", target: 100 },
-        { duration: "20s", target: 150 },
+        { duration: "2s", target: 1 },
+        { duration: "2s", target: 2 },
     ],
     thresholds: {
         "errors": ["rate<0.1"],
