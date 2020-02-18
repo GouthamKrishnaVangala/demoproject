@@ -4,7 +4,7 @@ const k6_1 = require("k6");
 var http = require("k6/http");
 var { check } = require("k6");
 var { Trend, Rate } = require("k6/metrics");
-const url = "https://store.mosaiq.one/";
+const url = "https://www.codetasty.com";
 exports.errorRate = new Rate("errors");
 exports.options = {
     stages: [
@@ -34,7 +34,7 @@ function default_1() {
         exports.errorRate.add(!resp);
     });
     k6_1.group("2nd grouping", function () {
-        const resp = http.get(url + "/legal/privacy");
+        const resp = http.get(url + "/pricing");
         //console.log("body length: "+(resp.body.length) );
         myTrend.add(resp.timings.waiting);
         check(resp, {

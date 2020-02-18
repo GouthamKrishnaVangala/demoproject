@@ -4,7 +4,7 @@ var http = require("k6/http");
 var { check } = require("k6");
 var { Trend, Rate } = require("k6/metrics");
 
-const url = "https://store.mosaiq.one/";
+const url = "https://www.codetasty.com";
 
 export let errorRate = new Rate("errors");
 
@@ -43,7 +43,7 @@ export default function(){
     })
     
 group("2nd grouping", function(){
-    const resp: any = http.get(url+"/legal/privacy");
+    const resp: any = http.get(url+"/pricing");
     //console.log("body length: "+(resp.body.length) );
     myTrend.add(resp.timings.waiting);
     check(resp,{
