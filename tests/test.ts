@@ -23,7 +23,7 @@ export let options = {
     thresholds: {
         "errors": ["rate<0.1"],
 
-        http_req_duration: ["avg<5000","p(95)<5000"],
+        http_req_duration: ["avg<150","p(95)<2000"],
     }
 }
 
