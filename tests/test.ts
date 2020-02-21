@@ -1,4 +1,11 @@
+export{};
 import { group } from "k6";
+/* import http = require("k6/http");
+import check = require("k6");
+import Trend = require("k6/metrics");
+import Rate = require("k6/metrics"); */
+
+
 
 var http = require("k6/http");
 var { check } = require("k6");
@@ -6,7 +13,7 @@ var { Trend, Rate } = require("k6/metrics");
 
 const url = "https://www.codetasty.com";
 
-export let errorRate = new Rate("errors");
+export let errorRate: any = new Rate("errors");
 
 export let options = {
     stages:[
@@ -21,7 +28,7 @@ export let options = {
 }
 
 
-var myTrend = new Trend("waiting_time");
+var myTrend:any = new Trend("waiting_time");
 export default function(){
     
     //String s = resp.timings.duration;

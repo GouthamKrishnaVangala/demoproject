@@ -4,14 +4,10 @@
     "scripts": {
         "load": "docker run -i -v //c/Users/vangala/Desktop/IJenkins/k6:/k6 -v //c/Users/vangala/Desktop/IJenkins/k6:/tmp/artifacts loadimpact/k6 run --out csv=/k6/testreport.csv /k6/build/test.js"
     },
-    "devDependencies": {
-		"ts-node": "^8.4.1",
-        "tsconfig-paths": "^3.9.0",
-        "typescript": "^3.6.4"
-		},
+    "devDependencies": {},
     "dependencies": {
         "@types/k6": "^0.25.1",
-        "@types/node": "^13.1.8",
+        "@types/node": "^13.7.4",
         "prettier": "^1.19.1"
     }
 }
