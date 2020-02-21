@@ -17,13 +17,13 @@ export let errorRate: any = new Rate("errors");
 
 export let options = {
     stages:[
-        {duration: "2s", target: 1},
-        {duration: "2s", target: 2},
+        {duration: "20s", target: 100},
+        {duration: "20s", target: 200},
     ],
     thresholds: {
         "errors": ["rate<0.1"],
 
-        http_req_duration: ["avg<200","p(95)<500"],
+        http_req_duration: ["avg<5000","p(95)<5000"],
     }
 }
 
